@@ -1,4 +1,6 @@
-#matrix prgm
+"""
+     i will start from z you come from A we meet at middle
+"""
 col = 10
 
 col1 = [" " for i in range(1, col)]
