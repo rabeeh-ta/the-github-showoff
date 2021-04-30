@@ -1,4 +1,4 @@
-
+#matrix prgm
 col = 10
 
 col1 = [" " for i in range(1, col)]
@@ -45,7 +45,7 @@ def name_to_mat(ltr):
         return ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (0, 1),  (2, 1),
                 (0, 2), (2, 2), (0, 3), (1, 3), (2, 3), (3, 3), (4, 3))  # column wise is done here
     elif('B' == ltr):
-        return ()
+        return ((0,0), (1,0),())
 
 
 matrix_code = name_to_mat("a")
