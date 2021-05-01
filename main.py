@@ -1,5 +1,10 @@
 """
-     i will start from z you come from A we meet at middle
+    TODO:
+     complete the alphabets (refact to new file).
+     new func for printing at most 10 letters in the matrix.
+     algorithm to generate the dates from the matrix.
+     get the git commit library or make one. 
+     generate standalone folder with all the git stuff ready to push.
 """
 col = 10
 
