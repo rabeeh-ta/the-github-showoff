@@ -47,8 +47,8 @@ def draw_mat(ch, pos=1):  # pos for which co-ord to start the letter
     # clear_display()
     for x, y in ch:
         mat[x + 1][pos + y] = "*"  # pos will leave the required space
-    # display()  # display the matrix without arrays and quotes
-    # display_mat()  # display the arrays which is the matrix
+    display()  # display the matrix without arrays and quotes
+    #display_mat()  # display the arrays which is the matrix
 
 
 # ? change the given charector to the co-ord in matrix. a charector is represented using 5 rows and 4 columns.
@@ -148,9 +148,7 @@ string = "abcdefghijklmnop"
 for l in string:
     char_code = char_to_coords(l)
     draw_mat(char_code)
-
-#char_code = char_to_coords("z")
-#draw_mat(char_code)
+    
 name = "DOG"
 
 # ? PRINT => all char in one matrix
@@ -171,6 +169,6 @@ name = "DOG"
 #     display()
 
 # ? PRINT => one letter in one matrix
-char_code = char_to_coords("d")
-draw_mat(char_code)
-display()
+#char_code = char_to_coords("z")
+#draw_mat(char_code)
+
