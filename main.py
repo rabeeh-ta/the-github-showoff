@@ -65,7 +65,7 @@ def char_to_coords(ltr):
                 (0, 2), (0, 3), (4, 1), (4, 3), (4, 2))
     elif('D' == ltr):
         return ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (0, 1),
-                (0, 2), (0, 3), (1, 3), (2, 3), (3, 3), (4, 1), (4, 3), (4, 2))
+                (0, 2), (1, 3), (2, 3), (3, 3), (4, 1), (4, 2))
     elif('E' == ltr):
         return ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (0, 1),
                 (0, 2), (0, 3), (2, 1), (2, 2), (2, 3), (4, 1), (4, 3), (4, 2))
@@ -107,22 +107,24 @@ def char_to_coords(ltr):
 string = "abcdefghijklmnop"
 name = "DOG"
 
-# ? loop through the string and print every letter in one matrix
-if len(name) <= 10:
-    for indx, l in enumerate(name):
-        pos = (indx * 5)
-        char_code = char_to_coords(l)
-        draw_mat(char_code, pos)
-    display()
-else:
-    print("string should be 10 or less")
+# ? PRINT => all char in one matrix
+# if len(name) <= 10:
+#     for indx, l in enumerate(name):
+#         pos = (indx * 5)
+#         char_code = char_to_coords(l)
+#         draw_mat(char_code, pos)
+#     display()
+# else:
+#     print("string should be 10 or less")
 
-# ? loop though the string and print every letter in diff matrix
+# ? PRINT => all char diff matrix
 # for l in string:
 #     clear_display()
 #     char_code = char_to_coords(l)
 #     draw_mat(char_code)
 #     display()
 
-# char_code = char_to_coords("m")
-# draw_mat(char_code)
+# ? PRINT => one letter in one matrix
+char_code = char_to_coords("d")
+draw_mat(char_code)
+display()
