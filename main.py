@@ -1,6 +1,6 @@
 """
         !ROADMAP!
-    [ ] complete the alphabets (refact to new file).
+    [*] complete the alphabets (refact to new file).
     [*] new func for printing at most 10 letters in the matrix.
     [ ] algorithm to generate the dates from the matrix.
     [ ] get the git commit library or make one.
@@ -77,7 +77,8 @@ def char_to_coords(ltr):
                 (2, 3), (4, 3), (2, 1), (3, 3), (1, 3))
     elif('I' == ltr):
         return ((0, 0), (0, 2), (0, 3), (4, 0), (0, 1),
-                (1, 2), (2, 2), (3, 2), (4, 1), (4, 2), (4, 3))
+                (1, 2), (2, 2), (3, 2), (4, 1), (4, 2), (4, 3),
+                (1, 1), (2, 1), (3, 1))
     elif('J' == ltr):
         return ((0, 0), (3, 0), (4, 0), (0, 1),
                 (0, 2), (0, 3), (1, 2), (2, 2), (3, 2), (4, 1), (4, 2))
@@ -99,21 +100,58 @@ def char_to_coords(ltr):
     elif('P' == ltr):
         return ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0),
                 (0, 1), (0, 2), (0, 3), (1, 3), (2, 1), (2, 2), (2, 3))
+    elif('Q' == ltr):
+        return ((1, 0), (2, 0), (3, 0), (0, 1),
+                (0, 2), (1, 3), (2, 3), (3, 3), (4, 1), (4, 3), (3, 2))
+    elif('R' == ltr):
+        return ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0),
+                (0, 1), (0, 2), (0, 3), (1, 3), (2, 1), (2, 2),
+                (3, 3), (4, 3))
+    elif('S' == ltr):
+        return ((0, 0), (1, 0), (2, 0), (3, 3), (4, 0), (0, 1),
+                (0, 2), (0, 3), (2, 1), (2, 2), (2, 3), (4, 1), (4, 3), (4, 2))
+    elif('T' == ltr):
+        return ((0, 0), (0, 2), (0, 3), (0, 1),
+                (1, 2), (2, 2), (3, 2), (4, 1), (4, 2),
+                (1, 1), (2, 1), (3, 1))
+    elif('U' == ltr):
+        return ((1, 0), (2, 0), (3, 0), (4, 0),
+                (1, 3), (2, 3), (3, 3), (4, 1), (4, 2),
+                (4, 3), (0, 0), (0, 3))
+    elif('V' == ltr):
+        return ((1, 0), (2, 0), (3, 0),
+                (1, 3), (2, 3), (3, 3), (4, 1), (4, 2),
+                (0, 0), (0, 3))
+    elif('W' == ltr):
+        return ((0, 0), (1, 0), (2, 0), (3, 0),
+                (0, 3), (1, 3), (3, 1), (2, 3), (3, 2),
+                (4, 0), (4, 3), (3, 3))
+    elif('X' == ltr):
+        return ((0, 0), (1, 3), (2, 1),
+                (0, 3), (2, 2), (3, 0),
+                (4, 0), (4, 3), (1, 0), (3, 3))
+    elif('Y' == ltr):
+        return ((1, 0), (2, 1), (3, 1),
+                (1, 3), (2, 2), (3, 2), (4, 1), (4, 2),
+                (0, 0), (0, 3))
+    elif('Z' == ltr):
+        return ((0, 0), (1, 2), (3, 1), (4, 0), (0, 1),
+                (0, 2), (0, 3), (2, 1), (2, 2), (4, 1), (4, 3), (4, 2))
 
 
 string = "abcdefghijklmnop"
-name = "dogedoge"
+name = "rabeeh"
 
 # ? PRINT => all char in one matrix
-if len(name) <= 10:
-    for indx, l in enumerate(name):
-        # finding where should the letter come on the matrix. 5 => 4 columns of letter + 1 space
-        pos = (indx * 5)
-        char_code = char_to_coords(l)
-        draw_mat(char_code, pos)
-    display()
-else:
-    print("string should be 10 or less")
+# if len(name) <= 10:
+#     for indx, l in enumerate(name):
+#         # finding where should the letter come on the matrix. 5 => 4 columns of letter + 1 space
+#         pos = (indx * 5)
+#         char_code = char_to_coords(l)
+#         draw_mat(char_code, pos)
+#     display()
+# else:
+#     print("string should be 10 or less")
 
 # ? PRINT => all char diff matrix
 # for l in string:
@@ -123,6 +161,6 @@ else:
 #     display()
 
 # ? PRINT => one letter in one matrix
-# char_code = char_to_coords("d")
-# draw_mat(char_code)
-# display()
+char_code = char_to_coords("z")
+draw_mat(char_code)
+display()
