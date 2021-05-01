@@ -3,28 +3,34 @@
 """
 col = 10
 
-col1 = [" " for i in range(1, col)]
-col2 = [" " for i in range(1, col)]
-col3 = [" " for i in range(1, col)]
-col4 = [" " for i in range(1, col)]
-col5 = [" " for i in range(1, col)]
-col6 = [" " for i in range(1, col)]
-col7 = [" " for i in range(1, col)]
+col2 = [" " for i in range(0, col)]
+col1 = [" " for i in range(0, col)]
+col3 = [" " for i in range(0, col)]
+col4 = [" " for i in range(0, col)]
+col5 = [" " for i in range(0, col)]
+col6 = [" " for i in range(0, col)]
+col7 = [" " for i in range(0, col)]
 
 mat = [col1, col2, col3, col4, col5, col6, col7]
 
+
 # will print the matrix
-
-
 def display_mat():
     for row in mat:
         print(row)
 
 
+# for clearing the display while printing many charector one by one
+def clear_display():
+    for i in range(0, 7):
+        for j in range(0, col):
+            mat[i][j] = " "
+
+
 # to print the matrix with out the arrays
 def display():
     for row in mat:
-        sttr = ''
+        sttr = ""
         for elemnt in row:
             sttr = sttr + elemnt
         print(sttr)
@@ -32,10 +38,12 @@ def display():
 
 # for drawing the individual co-ordinates.
 def draw_mat(ch):
+    # clear the display for each latter print > this is only for testing the letter
+    clear_display()
     for x, y in ch:
-        mat[x+1][y+1] = '*'
-    display()
-    # display_mat()
+        mat[x + 1][y + 1] = "*"
+    display()  # display the matrix without arrays and quotes
+    # display_mat() # display the arrays which is the matrix
 
 
 # change the given charector to the co-ord in matrix
@@ -92,5 +100,12 @@ def char_to_coords(ltr):
                 (0, 1), (0, 2), (0, 3), (1, 3), (2, 1), (2, 2), (2, 3))
 
 
-char_code = char_to_coords("c")
-draw_mat(char_code)
+string = "abcdefghijklmnop"
+
+# loop though the string and print every letter
+for l in string:
+    char_code = char_to_coords(l)
+    draw_mat(char_code)
+
+# char_code = char_to_coords("c")
+# draw_mat(char_code)
