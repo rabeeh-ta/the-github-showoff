@@ -75,7 +75,7 @@ def char_to_coords(ltr):
                 (0, 2), (0, 3), (2, 1), (2, 2), (2, 3))
     elif('G' == ltr):
         return ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (0, 1),
-                (0, 2), (0, 3), (2, 2), (2, 3), (4, 1), (4, 2), (4, 3))
+                (0, 2), (0, 3), (2, 2), (2, 3), (4, 1), (4, 2), (4, 3), (3,3))
     elif('H' == ltr):
         return ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (0, 3), (2, 2),
                 (2, 3), (4, 3), (2, 1), (3, 3), (1, 3))
@@ -92,8 +92,8 @@ def char_to_coords(ltr):
         return ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0),
                 (4, 1), (4, 3), (4, 2))
     elif('M' == ltr):
-        return ((0, 0), (1, 0), (2, 0), (3, 0), (0, 4),
-                (0, 3), (1, 3), (1, 1), (2, 3), (2, 2), (3, 3), (4, 3))
+        return ((0, 0), (1, 0), (2, 0), (3, 0),
+                (0, 3), (1, 3), (1, 1), (2, 3), (1, 2), (3, 3))
     elif('N' == ltr):
         return ((0, 0), (1, 0), (2, 0), (3, 0),
                 (0, 3), (1, 3), (1, 1), (2, 2), (2, 3), (3, 3))
@@ -108,9 +108,9 @@ def char_to_coords(ltr):
 string = "abcdefghijklmnop"
 
 # loop though the string and print every letter
-for l in string:
-    char_code = char_to_coords(l)
-    draw_mat(char_code)
+#for l in string:
+    #char_code = char_to_coords(l)
+    #draw_mat(char_code)
 
-# char_code = char_to_coords("c")
-# draw_mat(char_code)
+char_code = char_to_coords("g")
+draw_mat(char_code)
