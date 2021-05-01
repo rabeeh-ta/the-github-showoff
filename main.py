@@ -1,5 +1,5 @@
 """
-    !ROADMAP!
+    !TODO!
      complete the alphabets (refact to new file).
      new func for printing at most 10 letters in the matrix.
      algorithm to generate the dates from the matrix.
@@ -107,13 +107,22 @@ def char_to_coords(ltr):
 string = "abcdefghijklmnop"
 name = "DOG"
 
+# ? loop through the string and print every letter in one matrix
+if len(name) <= 10:
+    for indx, l in enumerate(name):
+        pos = (indx * 5)
+        char_code = char_to_coords(l)
+        draw_mat(char_code, pos)
+    display()
+else:
+    print("string should be 10 or less")
 
 # ? loop though the string and print every letter in diff matrix
-for l in string:
-    clear_display()
-    char_code = char_to_coords(l)
-    draw_mat(char_code)
-    display()
+# for l in string:
+#     clear_display()
+#     char_code = char_to_coords(l)
+#     draw_mat(char_code)
+#     display()
 
 # char_code = char_to_coords("m")
 # draw_mat(char_code)
