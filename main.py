@@ -1,10 +1,10 @@
 """
-    !ROADMAP!
-     complete the alphabets (refact to new file).
-     new func for printing at most 10 letters in the matrix.
-     algorithm to generate the dates from the matrix.
-     get the git commit library or make one.
-     generate standalone folder with all the git stuff ready to push.
+        !ROADMAP!
+    [ ] complete the alphabets (refact to new file).
+    [*] new func for printing at most 10 letters in the matrix.
+    [ ] algorithm to generate the dates from the matrix.
+    [ ] get the git commit library or make one.
+    [ ] generate standalone folder with all the git stuff ready to push.
 """
 col = 52
 
@@ -42,13 +42,10 @@ def display():
 
 
 # ? for drawing the individual co-ordinates.
-def draw_mat(ch, pos=1):  # pos for which co-ord to start the letter
-    # clear the display for each latter print > this is only for testing the letter
-    # clear_display()
+def draw_mat(ch, pos=1):  # if no poss passed then start from 1st co ord
     for x, y in ch:
-        mat[x + 1][pos + y] = "*"  # pos will leave the required space
-    # display()  # display the matrix without arrays and quotes
-    # display_mat()  # display the arrays which is the matrix
+        # pos will leave the required space so that letters will not get printed on top of each other
+        mat[x + 1][pos + y] = "*"
 
 
 # ? change the given charector to the co-ord in matrix. a charector is represented using 5 rows and 4 columns.
@@ -105,17 +102,18 @@ def char_to_coords(ltr):
 
 
 string = "abcdefghijklmnop"
-name = "DOG"
+name = "dogedoge"
 
 # ? PRINT => all char in one matrix
-# if len(name) <= 10:
-#     for indx, l in enumerate(name):
-#         pos = (indx * 5)
-#         char_code = char_to_coords(l)
-#         draw_mat(char_code, pos)
-#     display()
-# else:
-#     print("string should be 10 or less")
+if len(name) <= 10:
+    for indx, l in enumerate(name):
+        # finding where should the letter come on the matrix. 5 => 4 columns of letter + 1 space
+        pos = (indx * 5)
+        char_code = char_to_coords(l)
+        draw_mat(char_code, pos)
+    display()
+else:
+    print("string should be 10 or less")
 
 # ? PRINT => all char diff matrix
 # for l in string:
@@ -125,6 +123,6 @@ name = "DOG"
 #     display()
 
 # ? PRINT => one letter in one matrix
-char_code = char_to_coords("d")
-draw_mat(char_code)
-display()
+# char_code = char_to_coords("d")
+# draw_mat(char_code)
+# display()
