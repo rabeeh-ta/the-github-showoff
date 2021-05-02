@@ -120,3 +120,4 @@ else:
 commitDates = get_dates(mat, matDates, commitDates)
 # there are 50 stars in DOGE this array has 50 date-stamps powli man powli
 print(len(commitDates))
+print(commitDates)
