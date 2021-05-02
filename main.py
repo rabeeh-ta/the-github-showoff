@@ -50,9 +50,20 @@ def draw_mat(ch, pos=1):  # if no poss passed then start from 1st co ord
         # pos will leave the required space so that letters will not get printed on top of each other
         mat[x + 1][pos + y] = "*"
 
+# ? function will return dates in an array
+
+
+def get_dates():
+    commits = 0
+    for y in range(0, 52):
+        for x in range(0, 7):
+            if mat[x][y] == "*":
+                commits = commits + 1
+    print(commits)
+
 
 string = "abcdefghijklmnop"
-name = "zameel"
+name = "DOGE"
 
 # ? PRINT => all char in one matrix
 if len(name) <= 10:
@@ -65,6 +76,7 @@ if len(name) <= 10:
 else:
     print("string should be 10 or less")
 
+
 # ? PRINT => all char diff matrix
 # for l in string:
 #     clear_display()
@@ -76,3 +88,7 @@ else:
 #char_code = char_to_coords("z")
 # draw_mat(char_code)
 # display()
+
+
+# ? get the dates fucntion
+get_dates()
