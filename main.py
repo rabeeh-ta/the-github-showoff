@@ -88,7 +88,7 @@ def mat_dates_gen(year, matDates):
 
 # ? Func loops through the array and find for * if found then will take the co-ord and will get the corresponding date from the OTHER matrix
 def get_dates(mat, matDates, commitDates):
-    matDates = mat_dates_gen(2017, matDates)  # making the OTHER matrix
+    matDates = mat_dates_gen(2020, matDates)  # making the OTHER matrix
 
     for y in range(0, 52):
         for x in range(0, 7):
@@ -97,15 +97,25 @@ def get_dates(mat, matDates, commitDates):
                 commitDates.append(matDates[x][y])
     return commitDates
 
-#Will this work smh! @rabi!
+# Will this work smh! @rabi!
+
+
 def doTheCommit(commitDates):
+    workingDir = os.getcwd()
+
+    os.system("mkdir showoff")
+    os.chdir(workingDir+"/showoff")
+    os.system("git init")
     for i in commitDates:
-        execute = "git commit -m 'showoff' --date {}".format(i)
-        os.system(execute)
+        f = open("text.txt", "w")
+        f.write(f"{i}")
+        f.close()
+        os.system("git add .")
+        os.system(f"git commit -m {i} --date {i}")
 
 
 string = "abcdefghijklmnopqrstuvwxyz"
-name = "doge"
+name = "hoola"
 
 
 # ? PRINT => all char in one matrix
@@ -137,5 +147,6 @@ else:
 # ? puting everything together
 # commitDates array have the individual dates from all the * spots
 commitDates = get_dates(mat, matDates, commitDates)
-print(len(commitDates))
-print(commitDates)
+# print(len(commitDates))
+# print(commitDates)
+doTheCommit(commitDates)
