@@ -83,7 +83,6 @@ def mat_dates_gen(year, matDates):
             commitDate += timedelta(days=1)
             weekStart = 0  # reset for everyother week
 
-    display_mat(matDates)
     return matDates
 
 
