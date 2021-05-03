@@ -10,8 +10,9 @@ from modules.char_to_coords import char_to_coords
     [ ] get the git commit library or make one.
     [ ] generate standalone folder with all the git stuff ready to push.
 """
-col = 52
 
+
+col = 52
 #! this looks ugly should do some thing or take it to other file
 matCol1 = [" " for i in range(0, col)]
 matCol2 = [" " for i in range(0, col)]
@@ -44,9 +45,8 @@ def display(mat):
             sttr = sttr + elemnt
         print(sttr)
 
+
 # ? will print the matrix
-
-
 def display_mat(mat):
     for row in mat:
         print(row)
@@ -69,16 +69,27 @@ def draw_mat(ch, pos=1):  # if no poss passed then start from 1st co ord
 # ? function takes a matrix and year => generates all the dates from JAN to DEC and returns the array
 def mat_dates_gen(year, matDates):
     commitDate = date(year, 1, 1)
+
+    # ! find the starting day of the week
+    if commitDate.weekday() == 6:  # python-date-module week starts from monday. On github it starts from sunday so correcting
+        weekStart = 0
+    else:
+        # monday will return 0 so plus 1 will make it in the second row
+        weekStart = (commitDate.weekday() + 1)
+
     for y in range(0, 52):
-        for x in range(0, 7):
-            matDates[x][y] = commitDate
+        for x in range(weekStart, 7):
+            matDates[x][y] = commitDate  # for testing purpose
             commitDate += timedelta(days=1)
+            weekStart = 0  # reset for everyother week
+
     return matDates
 
 
 # ? Func loops through the array and find for * if found then will take the co-ord and will get the corresponding date from the OTHER matrix
 def get_dates(mat, matDates, commitDates):
-    matDates = mat_dates_gen(2020, matDates)  # making the OTHER matrix
+    matDates = mat_dates_gen(2017, matDates)  # making the OTHER matrix
+
     for y in range(0, 52):
         for x in range(0, 7):
             if mat[x][y] == "*":  # check
@@ -87,8 +98,9 @@ def get_dates(mat, matDates, commitDates):
     return commitDates
 
 
-string = "abcdefghijklmnop"
+string = "abcdefghijklmnopqrstuvwxyz"
 name = "doge"
+
 
 # ? PRINT => all char in one matrix
 if len(name) <= 10:
@@ -109,6 +121,7 @@ else:
 #     draw_mat(char_code)
 #     display(mat)
 
+
 # ? PRINT => one letter in one matrix
 # char_code = char_to_coords("z")
 # draw_mat(char_code)
@@ -118,6 +131,5 @@ else:
 # ? puting everything together
 # commitDates array have the individual dates from all the * spots
 commitDates = get_dates(mat, matDates, commitDates)
-# there are 50 stars in DOGE this array has 50 date-stamps powli man powli
 print(len(commitDates))
 print(commitDates)
