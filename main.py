@@ -79,7 +79,7 @@ def mat_dates_gen(year, matDates):
 
     for y in range(0, 52):
         for x in range(weekStart, 7):
-            matDates[x][y] = commitDate.strftime("%d")  # for testing purpose
+            matDates[x][y] = commitDate  # for testing purpose
             commitDate += timedelta(days=1)
             weekStart = 0  # reset for everyother week
 
@@ -132,5 +132,5 @@ else:
 # ? puting everything together
 # commitDates array have the individual dates from all the * spots
 commitDates = get_dates(mat, matDates, commitDates)
-# print(len(commitDates))
-# print(commitDates)
+print(len(commitDates))
+print(commitDates)
