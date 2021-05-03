@@ -69,20 +69,27 @@ def draw_mat(ch, pos=1):  # if no poss passed then start from 1st co ord
 # ? function takes a matrix and year => generates all the dates from JAN to DEC and returns the array
 def mat_dates_gen(year, matDates):
     commitDate = date(year, 1, 1)
-    # ! the mat should start from +1 this day BUT WILL NOT WORK IF SUNDAY => SUNDAY is 7
-    weekStart = (commitDate.weekday() + 1)
+
+    # ! find the starting day of the week
+    if commitDate.weekday() == 6:  # python-date-module week starts from monday. On github it starts from sunday so correcting
+        weekStart = 0
+    else:
+        # monday will return 0 so plus 1 will make it in the second row
+        weekStart = (commitDate.weekday() + 1)
+
     for y in range(0, 52):
         for x in range(weekStart, 7):
             matDates[x][y] = commitDate.strftime("%d")  # for testing purpose
             commitDate += timedelta(days=1)
             weekStart = 0  # reset for everyother week
+
     display_mat(matDates)
     return matDates
 
 
 # ? Func loops through the array and find for * if found then will take the co-ord and will get the corresponding date from the OTHER matrix
 def get_dates(mat, matDates, commitDates):
-    matDates = mat_dates_gen(2018, matDates)  # making the OTHER matrix
+    matDates = mat_dates_gen(2017, matDates)  # making the OTHER matrix
 
     for y in range(0, 52):
         for x in range(0, 7):
