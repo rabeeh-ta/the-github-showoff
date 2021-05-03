@@ -1,6 +1,6 @@
 from datetime import date, timedelta
 from modules.char_to_coords import char_to_coords
-
+import os
 
 """
         !ROADMAP!
@@ -96,6 +96,12 @@ def get_dates(mat, matDates, commitDates):
                 # get the corresponding date
                 commitDates.append(matDates[x][y])
     return commitDates
+
+#Will this work smh! @rabi!
+def doTheCommit(commitDates):
+    for i in commitDates:
+        execute = "git commit -m 'showoff' --date {}".format(i)
+        os.system(execute)
 
 
 string = "abcdefghijklmnopqrstuvwxyz"
