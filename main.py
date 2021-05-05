@@ -90,8 +90,8 @@ def mat_dates_gen(year, matDates):
 
 
 # ? Func loops through the array and find for * if found then will take the co-ord and will get the corresponding date from the OTHER matrix
-def get_dates(mat, matDates, commitDates):
-    matDates = mat_dates_gen(2017, matDates)  # making the OTHER matrix
+def get_dates(mat, matDates, commitDates, year):
+    matDates = mat_dates_gen(year, matDates)  # making the OTHER matrix
 
     for y in range(0, 52):
         for x in range(0, 7):
@@ -116,22 +116,17 @@ def doTheCommit(commitDates):
         os.system(f"git commit -m {i} --date {i}")
 
 
-string = "abcdefghijklmnopqrstuvwxyz"
-name = "helloworld"
-
-
 # ? PRINT => all char in one matrix
-if len(name) <= 10:
-    for indx, l in enumerate(name):
-        # finding where should the letter come on the matrix. 5 => 4 columns of letter + 1 space
+def draw_chars(string):
+    for indx, l in enumerate(string):
+            # finding where should the letter come on the matrix. 5 => 4 columns of letter + 1 space
         pos = (indx * 5)
         char_code = char_to_coords(l)
         draw_mat(char_code, pos)
     display(mat)
-else:
-    print("string should be 10 or less")
 
 
+# string = "abcdefghijklmnopqrstuvwxyz"
 # ? PRINT => all char diff matrix
 # for l in string:
 #     clear_display(mat)
@@ -146,9 +141,14 @@ else:
 # display(mat)
 
 
-# ? puting everything together
-# commitDates array have the individual dates from all the * spots
-commitDates = get_dates(mat, matDates, commitDates)
-# print(len(commitDates))
-# print(commitDates)
-doTheCommit(commitDates)
+# **************** program execution starts here ***************
+stringToPrint = input("Enter the string, Bellow 10 Charactors: ")
+year = int(input(
+    "Enter the year, ie the timeline to get printed on: "))
+
+if len(stringToPrint) <= 10 and year > 2010:
+    draw_chars(stringToPrint)
+    commitDates = get_dates(mat, matDates, commitDates, year)
+    doTheCommit(commitDates)
+else:
+    print("Invalid input try! Run the script Again.")
