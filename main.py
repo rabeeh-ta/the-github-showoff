@@ -9,6 +9,7 @@ import os
     [*] algorithm to generate the dates from the matrix.
     [*] get the git commit library or make one.
     [*] generate standalone folder with all the git stuff ready to push.
+    [ ] write a good readme add some screenshots. 
 """
 
 
@@ -63,7 +64,9 @@ def clear_display(mat):
 def draw_mat(ch, pos=1):  # if no poss passed then start from 1st co ord
     for x, y in ch:
         # pos will leave the required space so that letters will not get printed on top of each other
-        mat[x + 1][pos + y +2] = "*"
+        spaceInFront = 1
+        # to add more space in front ie, number of row to leave at the start change the spaceInFront
+        mat[x + 1][pos + y + spaceInFront] = "*"
 
 
 # ? function takes a matrix and year => generates all the dates from JAN to DEC and returns the array
@@ -88,7 +91,7 @@ def mat_dates_gen(year, matDates):
 
 # ? Func loops through the array and find for * if found then will take the co-ord and will get the corresponding date from the OTHER matrix
 def get_dates(mat, matDates, commitDates):
-    matDates = mat_dates_gen(2017, matDates)  # making the OTHER matrix
+    matDates = mat_dates_gen(2020, matDates)  # making the OTHER matrix
 
     for y in range(0, 52):
         for x in range(0, 7):
@@ -97,9 +100,8 @@ def get_dates(mat, matDates, commitDates):
                 commitDates.append(matDates[x][y])
     return commitDates
 
-# Will this work smh! @rabi!
 
-
+# ? Will create a new folder and commit there with the passed dates
 def doTheCommit(commitDates):
     workingDir = os.getcwd()
 
@@ -115,7 +117,7 @@ def doTheCommit(commitDates):
 
 
 string = "abcdefghijklmnopqrstuvwxyz"
-name = "rabeeh"
+name = "helloworld"
 
 
 # ? PRINT => all char in one matrix
@@ -149,4 +151,4 @@ else:
 commitDates = get_dates(mat, matDates, commitDates)
 # print(len(commitDates))
 # print(commitDates)
-doTheCommit(commitDates)
+# doTheCommit(commitDates)
