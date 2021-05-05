@@ -91,7 +91,7 @@ def mat_dates_gen(year, matDates):
 
 # ? Func loops through the array and find for * if found then will take the co-ord and will get the corresponding date from the OTHER matrix
 def get_dates(mat, matDates, commitDates):
-    matDates = mat_dates_gen(2020, matDates)  # making the OTHER matrix
+    matDates = mat_dates_gen(2017, matDates)  # making the OTHER matrix
 
     for y in range(0, 52):
         for x in range(0, 7):
@@ -151,4 +151,4 @@ else:
 commitDates = get_dates(mat, matDates, commitDates)
 # print(len(commitDates))
 # print(commitDates)
-# doTheCommit(commitDates)
+doTheCommit(commitDates)
