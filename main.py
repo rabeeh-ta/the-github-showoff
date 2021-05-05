@@ -7,8 +7,8 @@ import os
     [*] complete the alphabets (refact to new file).
     [*] new func for printing at most 10 letters in the matrix.
     [*] algorithm to generate the dates from the matrix.
-    [ ] get the git commit library or make one.
-    [ ] generate standalone folder with all the git stuff ready to push.
+    [*] get the git commit library or make one.
+    [*] generate standalone folder with all the git stuff ready to push.
 """
 
 
@@ -63,7 +63,7 @@ def clear_display(mat):
 def draw_mat(ch, pos=1):  # if no poss passed then start from 1st co ord
     for x, y in ch:
         # pos will leave the required space so that letters will not get printed on top of each other
-        mat[x + 1][pos + y] = "*"
+        mat[x + 1][pos + y +2] = "*"
 
 
 # ? function takes a matrix and year => generates all the dates from JAN to DEC and returns the array
@@ -88,7 +88,7 @@ def mat_dates_gen(year, matDates):
 
 # ? Func loops through the array and find for * if found then will take the co-ord and will get the corresponding date from the OTHER matrix
 def get_dates(mat, matDates, commitDates):
-    matDates = mat_dates_gen(2020, matDates)  # making the OTHER matrix
+    matDates = mat_dates_gen(2017, matDates)  # making the OTHER matrix
 
     for y in range(0, 52):
         for x in range(0, 7):
@@ -107,15 +107,15 @@ def doTheCommit(commitDates):
     os.chdir(workingDir+"/showoff")
     os.system("git init")
     for i in commitDates:
-        f = open("text.txt", "w")
-        f.write(f"{i}")
-        f.close()
+        txt = open("text.txt", "w")
+        txt.write(f"{i}")
+        txt.close()
         os.system("git add .")
         os.system(f"git commit -m {i} --date {i}")
 
 
 string = "abcdefghijklmnopqrstuvwxyz"
-name = "hoola"
+name = "rabeeh"
 
 
 # ? PRINT => all char in one matrix
