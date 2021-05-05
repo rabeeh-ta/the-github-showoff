@@ -1,7 +1,6 @@
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
+![GitHub Commits Timeline Screenshot](/image.png)
 ### Prerequisites
 Make sure you have GIT and Python3.6 or later installed.
 
