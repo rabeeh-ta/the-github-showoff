@@ -8,7 +8,7 @@
 [Demo 1](https://github.com/rabeeh-ta?tab=overview&from=2017-12-01&to=2017-12-31)
 [Demo 2](https://github.com/zameel7?tab=overview&from=2017-12-01&to=2017-12-31)
 
-A python script by which you can print text on your github commits timeline, the script can print at most 10 charactor in a Years timeline. Runs fully on the CLI and generates a standalone folder which you can add as your Repo.
+A python script by which you can print text on your github commits timeline, the script can print at most 10 character in a Years timeline. Runs fully on the CLI and generates a standalone folder which you can add as your Repo.
 
 ### Prerequisites
 
